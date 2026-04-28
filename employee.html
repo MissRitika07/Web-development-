@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration Form</title>
+</head>
+<body bgcolor="#f2f2f2">
+
+    <h1 align="center" style="color: darkblue;">
+        Employee Registration Form
+    </h1>
+
+    <form action="submit.html" method="post">
+
+        <table align="center" cellpadding="10" cellspacing="5" border="1" bgcolor="white">
+
+            <tr>
+                <td><b>Full Name:</b></td>
+                <td>
+                    <input type="text" name="fullname" placeholder="Enter Full Name" 
+                    size="30" maxlength="50" required autofocus>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Email ID:</b></td>
+                <td>
+                    <input type="email" name="email" placeholder="Enter Email ID" 
+                    size="30" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Mobile Number:</b></td>
+                <td>
+                    <input type="tel" name="mobile" placeholder="Enter Mobile Number" 
+                    pattern="[0-9]{10}" maxlength="10" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Gender:</b></td>
+                <td>
+                    <input type="radio" name="gender" value="Male" required> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Date of Birth:</b></td>
+                <td>
+                    <input type="date" name="dob" min="1990-01-01" max="2025-12-31">
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Department:</b></td>
+                <td>
+                    <select name="department" required>
+                        <option value="">--Select Department--</option>
+                        <option>HR</option>
+                        <option>IT</option>
+                        <option>Finance</option>
+                        <option>Marketing</option>
+                        <option>Sales</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Skills:</b></td>
+                <td>
+                    <input type="checkbox" name="skills" value="Java"> Java
+                    <input type="checkbox" name="skills" value="Python"> Python
+                    <input type="checkbox" name="skills" value="C++"> C++
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Address:</b></td>
+                <td>
+                    <textarea name="address" rows="4" cols="30" 
+                    placeholder="Enter Your Address"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Upload Resume:</b></td>
+                <td>
+                    <input type="file" name="resume" accept=".pdf,.doc,.docx">
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Password:</b></td>
+                <td>
+                    <input type="password" name="password" 
+                    placeholder="Enter Password" minlength="6" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Website:</b></td>
+                <td>
+                    <input type="url" name="website" placeholder="Portfolio Link">
+                </td>
+            </tr>
+
+            <tr>
+                <td><b>Experience (Years):</b></td>
+                <td>
+                    <input type="number" name="experience" min="0" max="30">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Clear Form">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</body>
+</html>
