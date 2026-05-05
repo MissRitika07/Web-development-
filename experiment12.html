@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Experiment 12 - XSLT Transformation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; }
+    header { border-bottom: 2px solid #333; padding-bottom: 12px; margin-bottom: 20px; }
+    pre { background: #f5f5f5; padding: 14px; border: 1px solid #ccc; overflow-x: auto; }
+    .output { background: #e1f5fe; border: 1px solid #81d4fa; padding: 14px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Experiment 12: XSLT to Transform XML</h1>
+    <p><strong>Name:</strong> Ritika Molawade<br><strong>Roll No:</strong> 16</p>
+  </header>
+  <section>
+    <h2>XML Source</h2>
+    <pre>&lt;students&gt;
+  &lt;student id="16"&gt;
+    &lt;name&gt;Ritika Molawade&lt;/name&gt;
+    &lt;department&gt;Computer Science&lt;/department&gt;
+  &lt;/student&gt;
+&lt;/students&gt;</pre>
+    <h2>XSLT Stylesheet</h2>
+    <pre>&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+      &lt;body&gt;
+        &lt;h2&gt;Student Details&lt;/h2&gt;
+        &lt;table border="1"&gt;
+          &lt;tr&gt;&lt;th&gt;Roll No&lt;/th&gt;&lt;th&gt;Student Name&lt;/th&gt;&lt;th&gt;Department&lt;/th&gt;&lt;/tr&gt;
+          &lt;xsl:for-each select="students/student"&gt;
+            &lt;tr&gt;
+              &lt;td&gt;&lt;xsl:value-of select="@id" /&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="name" /&gt;&lt;/td&gt;
+              &lt;td&gt;&lt;xsl:value-of select="department" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+          &lt;/xsl:for-each&gt;
+        &lt;/table&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;</pre>
+  </section>
+  <section class="output">
+    <h2>Transformed Output</h2>
+    <p>When the XML is transformed with the XSLT stylesheet, the rendered output becomes an HTML table:</p>
+    <table border="1" cellpadding="6" cellspacing="0">
+      <tr><th>Roll No</th><th>Student Name</th><th>Department</th></tr>
+      <tr><td>16</td><td>Ritika Molawade</td><td>Computer Science</td></tr>
+    </table>
+  </section>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Experiment 2 - Static HTML Tags</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 24px;
+      background-color: #f0f8ff;
+    }
+
+    header {
+      border-bottom: 2px solid #333;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      background: #ffffff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+    img {
+      border-radius: 10px;
+      border: 2px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="box">
+  <h1>Experiment 2: Static Web Page</h1>
+  <p>
+    <strong>Name:</strong> Ritika Molawade <br>
+    <strong>Roll No:</strong> 16
+  </p>
+</header>
+
+<section class="box">
+  <h2>Page Content</h2>
+  <p>This page uses HTML tags and attributes like image, link, and form.</p>
+
+  <h3>Features</h3>
+  <ul>
+    <li>Headings</li>
+    <li>Paragraphs</li>
+    <li>Images</li>
+    <li>Links</li>
+  </ul>
+
+  <!-- ✅ Working Image -->
+  <h3>Sample Image</h3>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
+       alt="HTML Image"
+       width="150"
+       height="150">
+
+  <!-- ✅ Link -->
+  <p>
+    Visit 
+    <a href="https://www.google.com" target="_blank">Google</a>
+  </p>
+
+</section>
+
+<section class="box">
+  <h2>Sample Form</h2>
+
+  <form>
+    <label>Name:</label><br>
+    <input type="text" placeholder="Enter name" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" placeholder="Enter email" required><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</section>
+
+<footer class="box" style="text-align:center;">
+  
+</footer>
+
+</body>
+</html>
