@@ -1,22 +1,25 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="students.xsl"?>
-<class> 
-   <student rollno = "393"> 
-      <firstname>Ritika</firstname> 
-      <lastname>Molawade</lastname>
-      <nickname>Ritt</nickname> 
-      <marks>99</marks> 
-   </student> 
-   <student rollno = "493"> 
-      <firstname>Vedika</firstname> 
-      <lastname>Nilam</lastname> 
-      <nickname>Vinni</nickname> 
-      <marks>95</marks> 
-   </student> 
-   <student rollno = "593"> 
-      <firstname>swap</firstname> 
-      <lastname>Disha</lastname> 
-      <nickname>Rituu</nickname> 
-      <marks>90</marks> 
-   </student> 
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="exp13.xsl"?>
+<class>
+    <student rollno="18">
+        <firstname>Ritika</firstname>
+        <lastname>MOlawade</lastname>
+        <nickname>Rituu</nickname>
+        <marks>90</marks>
+        <department>Computer Science</department>
+    </student>
+    <student rollno="493">
+        <firstname>Vaneet</firstname>
+        <lastname>Disha</lastname>
+        <nickname>Vinni</nickname>
+        <marks>95</marks>
+        <department>Computer Science</department>
+    </student>
+    <student rollno="593">
+        <firstname>Jasvir</firstname>
+        <lastname>SS</lastname>
+        <nickname>Raju</nickname>
+        <marks>90</marks>
+        <department>Computer Science</department>
+    </student>
 </class>
