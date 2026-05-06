@@ -4,13 +4,147 @@
   <meta charset="UTF-8">
   <title>Web Development Experiments Index</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 24px; background-color: #f9f9f9; }
-    header { border-bottom: 2px solid #333; padding-bottom: 12px; margin-bottom: 20px; background-color: #fff; padding: 20px; border-radius: 8px; }
-    .experiment-list { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-    .experiment-list ul { list-style-type: none; padding: 0; }
-    .experiment-list li { margin-bottom: 10px; }
-    .experiment-list a { text-decoration: none; color: #007bff; font-weight: bold; }
-    .experiment-list a:hover { text-decoration: underline; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      font-size: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: slideDown 0.6s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+
+    .experiment-list {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .experiment-list h2 {
+      color: #667eea;
+      font-size: 2em;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+
+    .experiment-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .experiment-list li {
+      margin-bottom: 15px;
+      transform: translateX(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experiment-list li:hover {
+      transform: translateX(10px);
+    }
+
+    .experiment-list a {
+      display: block;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+      font-size: 1.05em;
+      letter-spacing: 0.5px;
+    }
+
+    .experiment-list a:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      transform: translateY(-3px);
+    }
+
+    .experiment-list a:active {
+      transform: translateY(-1px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      header {
+        padding: 25px;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      .experiment-list {
+        padding: 25px;
+      }
+
+      .experiment-list h2 {
+        font-size: 1.5em;
+      }
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -33,7 +167,8 @@
       <li><a href="experiment10.html">Experiment 10: Resume Webpage</a></li>
       <li><a href="experiment11.html">Experiment 11: Study and Implementation of XML</a></li>
       <li><a href="experiment12.html">Experiment 12: XSLT to Transform XML</a></li>
-      <li><a href="experiment13.html">Experiment 13: Student Application using XSLT Conditional Statement</a></li>
+      <li><a href="Exp13.xml">Exp13.xml - Student Data XML File</a></li>
+      <li><a href="Exp13_output.html">Exp13.xsl - XSLT Transformation Output</a></li>
     </ul>
   </section>
 </body>
