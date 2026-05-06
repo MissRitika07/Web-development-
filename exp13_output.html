@@ -1,215 +1,174 @@
-<html>
-  <head>
-    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Records</title>
-    <style>
-              * {
-                  margin: 0;
-                  padding: 0;
-                  box-sizing: border-box;
-              }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Development Experiments Index</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-              body {
-                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                  min-height: 100vh;
-                  padding: 40px 20px;
-              }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      font-size: 16px;
+    }
 
-              .container {
-                  max-width: 900px;
-                  margin: 0 auto;
-              }
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      animation: slideDown 0.6s ease-out;
+    }
 
-              header {
-                  text-align: center;
-                  margin-bottom: 40px;
-                  color: white;
-              }
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 1px;
+    }
 
-              header h1 {
-                  font-size: 2.5rem;
-                  margin-bottom: 10px;
-                  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-              }
+    header p {
+      font-size: 1.1em;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
 
-              header p {
-                  font-size: 1.1rem;
-                  opacity: 0.9;
-              }
+    .experiment-list {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 0.8s ease-out;
+    }
 
-              .stats-bar {
-                  display: flex;
-                  justify-content: center;
-                  gap: 30px;
-                  margin-bottom: 30px;
-                  flex-wrap: wrap;
-              }
+    .experiment-list h2 {
+      color: #667eea;
+      font-size: 2em;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #667eea;
+      padding-bottom: 15px;
+      text-align: center;
+    }
 
-              .stat-item {
-                  background: rgba(255, 255, 255, 0.15);
-                  backdrop-filter: blur(10px);
-                  padding: 20px 30px;
-                  border-radius: 16px;
-                  text-align: center;
-                  color: white;
-              }
+    .experiment-list ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-              .stat-value {
-                  font-size: 2rem;
-                  font-weight: 700;
-                  display: block;
-              }
+    .experiment-list li {
+      margin-bottom: 15px;
+      transform: translateX(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-              .stat-label {
-                  font-size: 0.9rem;
-                  opacity: 0.9;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-              }
+    .experiment-list li:hover {
+      transform: translateX(10px);
+    }
 
-              .table-wrapper {
-                  background: white;
-                  border-radius: 20px;
-                  padding: 30px;
-                  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-              }
+    .experiment-list a {
+      display: block;
+      padding: 18px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+      font-size: 1.05em;
+      letter-spacing: 0.5px;
+    }
 
-              table {
-                  width: 100%;
-                  border-collapse: separate;
-                  border-spacing: 0;
-                  font-size: 0.95rem;
-              }
+    .experiment-list a:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+      transform: translateY(-3px);
+    }
 
-              caption {
-                  font-size: 1.4rem;
-                  font-weight: 700;
-                  color: #667eea;
-                  margin-bottom: 25px;
-                  text-align: center;
-              }
+    .experiment-list a:active {
+      transform: translateY(-1px);
+    }
 
-              th {
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                  color: white;
-                  padding: 18px 15px;
-                  font-weight: 600;
-                  text-align: left;
-                  font-size: 0.9rem;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-              }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
 
-              th:first-child {
-                  border-radius: 10px 0 0 0;
-              }
+      header {
+        padding: 25px;
+      }
 
-              th:last-child {
-                  border-radius: 0 10px 0 0;
-              }
+      header h1 {
+        font-size: 2em;
+      }
 
-              td {
-                  padding: 16px 15px;
-                  text-align: left;
-                  border-bottom: 1px solid #e2e8f0;
-                  color: #4a5568;
-              }
+      .experiment-list {
+        padding: 25px;
+      }
 
-              tr:hover td {
-                  background: #f7fafc;
-              }
+      .experiment-list h2 {
+        font-size: 1.5em;
+      }
+    }
 
-              tr:last-child td:first-child {
-                  border-radius: 0 0 0 10px;
-              }
+    /* Animations */
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-              tr:last-child td:last-child {
-                  border-radius: 0 0 10px 0;
-              }
-
-              .rollno {
-                  background: #e0e7ff;
-                  color: #4338ca;
-                  padding: 6px 12px;
-                  border-radius: 8px;
-                  font-weight: 600;
-                  font-size: 0.9rem;
-              }
-
-              .marks {
-                  font-weight: 700;
-                  font-size: 1.1rem;
-              }
-
-              .marks-excellent {
-                  color: #059669;
-              }
-
-              .nickname {
-                  color: #7c3aed;
-                  font-style: italic;
-              }
-
-              .filter-info {
-                  text-align: center;
-                  margin-top: 20px;
-                  padding: 15px;
-                  background: #fef3c7;
-                  border-radius: 10px;
-                  color: #92400e;
-                  font-size: 0.95rem;
-              }
-          </style>
-  </head>
-  <body>
-    <div class="container"><header><h1>Student Records</h1>
-        <p>Academic Performance Dashboard</p></header><div class="stats-bar">
-        <div class="stat-item"><span class="stat-value">3</span><span class="stat-label">Total Students</span></div>
-        <div class="stat-item"><span class="stat-value">3</span><span class="stat-label">Distinction</span></div>
-        <div class="stat-item"><span class="stat-value">91.7</span><span class="stat-label">Class Average</span></div>
-      </div>
-      <div class="table-wrapper">
-        <table>
-          <caption>Students with Distinction (Marks 90+)</caption>
-          <thead>
-            <tr>
-              <th>Roll No</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Nickname</th>
-              <th>Marks</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="rollno">493</span></td>
-              <td>Vaneet</td>
-              <td>Disha</td>
-              <td><span class="nickname">Vinni</span></td>
-              <td><span class="marks marks-excellent">95%</span></td>
-            </tr>
-            <tr>
-              <td><span class="rollno">18</span></td>
-              <td>Ritika</td>
-              <td>MOlawade</td>
-              <td><span class="nickname">Rituu</span></td>
-              <td><span class="marks marks-excellent">90%</span></td>
-            </tr>
-            <tr>
-              <td><span class="rollno">593</span></td>
-              <td>Jasvir</td>
-              <td>SS</td>
-              <td><span class="nickname">Raju</span></td>
-              <td><span class="marks marks-excellent">90%</span></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="filter-info">
-                      Showing students with 90+ marks only. Total distinction holders: 3</div>
-      </div>
-    </div>
-  </body>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Web Development Experiments Index</h1>
+    <p><strong>Name:</strong> Ritika Molawade<br><strong>Roll No:</strong> 16</p>
+  </header>
+  <section class="experiment-list">
+    <h2>Experiments</h2>
+    <ul>
+      <li><a href="experiment1.html">Experiment 1: Web Technology Basics</a></li>
+      <li><a href="experiment2.html">Experiment 2: Static Web Page using HTML Tags</a></li>
+      <li><a href="experiment3.html">Experiment 3: Text Formatting Tags</a></li>
+      <li><a href="experiment4.html">Experiment 4: Using List Tags in HTML</a></li>
+      <li><a href="experiment5.html">Experiment 5: Image Inclusion using HTML Tag</a></li>
+      <li><a href="experiment6.html">Experiment 6: Frames in HTML</a></li>
+      <li><a href="experiment7.html">Experiment 7: Link Tags in HTML</a></li>
+      <li><a href="experiment8.html">Experiment 8: Demonstrating List Tags in HTML</a></li>
+      <li><a href="experiment9.html">Experiment 9: Employee Registration Webpage</a></li>
+      <li><a href="experiment10.html">Experiment 10: Resume Webpage</a></li>
+      <li><a href="experiment11.html">Experiment 11: Study and Implementation of XML</a></li>
+      <li><a href="experiment12.html">Experiment 12: XSLT to Transform XML</a></li>
+      <li><a href="experiment13.html">Exp13.xsl - XSLT Transformation Output</a></li>
+    </ul>
+  </section>
+</body>
 </html>
